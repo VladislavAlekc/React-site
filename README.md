@@ -11,3 +11,4 @@
 - Методология БЭМ
 - Адаптивная верстка
 - React Pagination 
+- React Content Loader 
