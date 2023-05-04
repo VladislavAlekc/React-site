@@ -1,0 +1,330 @@
+// Основной блок=============//
+.catalog {
+  &__navigation {
+  }
+  &__main-catalog {
+  }
+}
+
+/*---------------------------New-Arrivals----------------------------------*/
+
+.navigation {
+  background: #f8f3f4;
+  // .navigation__container
+
+  &__container {
+    padding: 75px 0px 0px 0px;
+    min-height: 223px;
+  }
+
+  // .navigation__content
+
+  &__content {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 24px;
+    display: flex;
+    align-items: center;
+    @media (min-width: $mobileSmall+px) {
+      @include adaptive-value("padding-top", 59, 44, 1);
+      justify-content: space-between;
+    }
+    @media (max-width: $mobileSmall+px) {
+      flex-direction: column;
+    }
+  }
+
+  // .navigation__arrival
+
+  &__arrival {
+    color: #f16d7f;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    @media (max-width: $mobileSmall+px) {
+      padding-bottom: 32px;
+    }
+  }
+}
+/*---------------------------Filter-Catalog------------------------------*/
+
+.main-catalog {
+  padding-top: 70px;
+
+  // .main-catalog__container
+
+  &__container {
+  }
+
+  // .main-catalog__nav
+
+  &__nav {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    padding-bottom: 50px;
+    @media (max-width: $mobile+px) {
+      padding-bottom: 90px;
+      justify-content: center;
+    }
+  }
+
+  // .main-catalog__filter
+
+  &__filter {
+  }
+
+  // .main-catalog__choice
+
+  &__error {
+    padding: 25px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    @media (max-width: $mobile+px) {
+      padding: 0px;
+    }
+    & span {
+      @include adaptive-value("font-size", 55, 40, 1);
+
+      padding-bottom: 15px;
+    }
+    & h3 {
+      font-weight: 900;
+      color: $pinkColor;
+      @include adaptive-value("font-size", 35, 26, 1);
+
+      padding-bottom: 10px;
+    }
+    & p {
+      color: #222222;
+      font-weight: 600;
+      @include adaptive-value("font-size", 25, 18, 1);
+    }
+  }
+}
+
+.filter {
+  position: absolute;
+  z-index: 2;
+  top: 1px;
+  left: 0;
+  @media (max-width: $mobile+px) {
+    top: 85px;
+    left: 5px;
+  }
+  @media (max-width: 524px) {
+    top: 115px;
+    left: 5px;
+  }
+
+  // .filter__list
+
+  &__list {
+  }
+
+  // .filter__link
+
+  &__link {
+    &._open {
+      .filter__link-span {
+        color: #ef5b70;
+        & span {
+          color: #ef5b70;
+        }
+      }
+    }
+  }
+
+  // .filter__link-span
+
+  &__link-span {
+    cursor: pointer;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    flex-direction: row-reverse;
+    justify-content: start;
+    @media (max-width: $mobileSmall+px) {
+      font-size: 18px;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ef5b70;
+      }
+      &:hover span {
+        color: #ef5b70;
+      }
+    }
+
+    & span {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px/14px * 100%;
+      margin-right: 11px;
+      color: #000000;
+      @media (max-width: $mobileSmall+px) {
+        display: none;
+      }
+    }
+  }
+  ._active {
+    color: #ef5b70;
+  }
+  // .filter__list-sub
+
+  &__list-sub {
+    position: absolute;
+
+    top: 25px;
+    left: 0px;
+    min-width: 230px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.336);
+    border: 1px solid #ebebeb;
+    padding: 0px 15px 10px 10px;
+    cursor: pointer;
+    transition: all 0.55s ease 0s;
+  }
+
+  // .filter__link-sub
+
+  &__link-sub {
+    display: flex;
+
+    justify-content: space-between;
+    margin-top: 18px;
+    color: #6f6e6e;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #ef5b70;
+      }
+    }
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 121%;
+    &:not(:last-child) {
+      border-bottom: 1px solid #ebebeb;
+    }
+    padding: 9px 0px 11px 11px;
+  }
+}
+._choice-categories {
+  text-decoration: underline;
+  color: $pinkColor;
+}
+.choice {
+  // .choice__category-all
+
+  &__category-all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: $mobileSmall+px) {
+      justify-content: start;
+    }
+  }
+  &__category {
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 119%;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &:not(:last-child) {
+      margin-right: 25px;
+      @media (max-width: $tabble+px) {
+        margin-right: 20px;
+      }
+      @media (max-width: $mobile+px) {
+        margin-right: 17px;
+      }
+    }
+  }
+}
+/*-----------------------Filter-Catalog-nav-bottom---------------------------*/
+.main-catalog {
+  // .main-catalog__pagination
+
+  &__pagination {
+    @include adaptive-value("padding-top", 48, 40, 1);
+    @include adaptive-value("padding-bottom", 96, 64, 1);
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px 15px;
+  border: 1px solid #ebebeb;
+  border-radius: 5px;
+
+  & .selected {
+    a {
+      color: $pinkColor;
+    }
+  }
+  & .previous {
+    & a {
+      font-weight: 600;
+      font-size: 18px;
+      color: black;
+    }
+  }
+  & .next {
+    & a {
+      font-weight: 600;
+      font-size: 18px;
+      color: black;
+    }
+  }
+  & li {
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    & a {
+      color: #c4c4c4;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 120%;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $pinkColor;
+        }
+      }
+    }
+  }
+}
+
+// ._arrow-left
+
+._arrow-left::before {
+  color: #000000;
+  transform: rotate(180deg);
+}
+
+// ._next
+
+// ._arrow-right
+
+._arrow-right {
+  color: #000000;
+}

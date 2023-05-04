@@ -1,0 +1,126 @@
+// Подключение шрифтов ===========================================//
+//&display=swap - при подключении через плагин ===============//
+@import url("https://fonts.googleapis.com/css?family=Lato:300,regular,700,900&display=swap");
+
+// Шрифт по умолчанию ===========================================//
+$fontFamily: Lato;
+$fontSize: 14;
+
+// Основной цвет (по-умолчанию)
+$mainColor: #5d5d5d;
+$pinkColor: #ee5469ec;
+
+// Body and Оболочка ===============================//
+body {
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: $fontSize + px;
+  color: $mainColor;
+  cursor: default;
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 1 auto;
+}
+
+// Настройка адаптивной сетки ===========================================//
+// Минимальная ширина страницы
+$minWidth: 375;
+
+// Максимальная ширина страницы
+$maxWidth: 1600;
+
+// Ширина ограничивающего контейнера ====================//
+$maxWidthContainer: 1140;
+
+// Общий отступ у контейнера
+$containerPadding: 30;
+
+// Ширина срабатывания первого брейкпоинта ====//
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк поинты ============//
+$pc: $containerWidth; // пк, ноутбуки
+$tabble: 991.98; // планшеты
+$mobile: 767.98; // телефоны L
+$mobileSmall: 479.98; // телефоны S
+
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов)
+// 2 = по брейк-поинтам (меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+// Ограничивающий контейнер ============//
+@if ($responsiveType == 1) {
+  [class*="_container"] {
+    @if ($maxWidthContainer > 0) {
+      max-width: $maxWidthContainer + px;
+      margin: 0px auto;
+    }
+    @if ($containerPadding > 0) {
+      padding: 0 calc($containerPadding / 2) + px;
+    }
+  }
+} @else {
+  [class*="_container"] {
+    margin: 0px auto;
+    @if ($maxWidthContainer > 0) {
+      max-width: $maxWidthContainer + px;
+    } @else {
+      @if ($containerPadding > 0) {
+        padding: 0 calc($containerPadding / 2) + px;
+      }
+    }
+    @media (max-width: $pc+px) {
+      max-width: 970px;
+    }
+    @media (max-width: $tabble+px) {
+      max-width: 750px;
+    }
+    @media (max-width: $mobile+px) {
+      max-width: none;
+      @if ($containerPadding>0 and $maxWidthContainer > 0) {
+        padding: 0 calc($containerPadding / 2) + px;
+      }
+    }
+  }
+}
+// Общий отступ у контейнера
+// Обнуление ===============================//
+@import "commons/_null.scss";
+// Mixins ===============================//
+@import "commons/_mixins.scss";
+// Icons ===============================//
+@import "commons/_icons.scss";
+
+// Header ===============================//
+@import "base/_header.scss";
+// Footer ===============================//
+@import "base/_footer.scss";
+// Common ===============================//
+@import "base/_common.scss";
+// Main-Index ===============================//
+@import "main/_index.scss";
+// Main-Catalog ===============================//
+@import "main/_catalog.scss";
+// Main-Product ===============================//
+@import "main/_product.scss";
+// Main-Cart ===============================//
+@import "main/_cart.scss";
+// Main-Registration ===============================//
+@import "main/_registration.scss";
+// Main-Cart-empty ===============================//
+@import "main/_cart-empty.scss";
+// Main-Notfoundblock ===============================//
+@import "main/_notfoundblock.scss";
+// Modal ===============================//
+@import "main/_modal.scss";

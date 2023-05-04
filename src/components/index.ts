@@ -1,0 +1,11 @@
+export { default as Header } from "./Header";
+export { default as Footer } from "./Footer";
+export { default as Filter } from "./CatalogComponents/Filter";
+export { default as Categories } from "./CatalogComponents/Categories";
+export { default as ProductBlock } from "./CatalogComponents/ProductBlock";
+export { default as CartItem } from "./CartComponents/CartItem";
+export { default as EmptyCart } from "./CartComponents/EmptyCart";
+export { default as Arrivals } from "./CatalogComponents/Arrivals";
+export { default as Skeleton } from "./CatalogComponents/Skeleton";
+export { default as Pagination } from "./CatalogComponents/Pagination";
+export { default as NotFoundBlock } from "./NotFoundBlock";

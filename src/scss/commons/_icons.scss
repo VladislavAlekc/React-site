@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../fonts/icons.woff") format("woff"),
+    url("../fonts/icons.woff2#icons") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+%ic {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="_icon-"],
+[class*="_icon-"] {
+  &:before {
+    @extend %ic;
+    display: block;
+  }
+}
+
+._icon-burger:before {
+  content: "\e909";
+}
+._icon-registration:before {
+  content: "\e90a";
+}
+._icon-basket:before {
+  content: "\e90b";
+}
+._icon-delivery:before {
+  content: "\e90c";
+}
+._icon-sale:before {
+  content: "\e90d";
+}
+._icon-crown:before {
+  content: "\e90e";
+}
+._icon-form:before {
+  content: "\e90f";
+}
+._icon-arrow-right:before {
+  content: "\e910";
+}
+._icon-arrow-down:before {
+  content: "\e911";
+}
+._icon-filter:before {
+  content: "\e912";
+}
+._icon-arrow-button:before {
+  content: "\e913";
+}
+._icon-facebook:before {
+  content: "\e914";
+}
+._icon-inst:before {
+  content: "\e915";
+}
+._icon-pi:before {
+  content: "\e916";
+}
+._icon-twit:before {
+  content: "\e917";
+}
+._icon-ok:before {
+  content: "\e918";
+}

@@ -1,0 +1,213 @@
+/*---------------------------Footer-----------------------------------*/
+.footer {
+  &__subscription {
+    position: relative;
+  }
+  &__social {
+    background-color: #222224;
+  }
+}
+/*---------------------------Footer-subscription----------------------------------*/
+.subscription {
+  &__cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    & img {
+      object-position: left top;
+    }
+    &._ibg::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(
+        rgba(244, 244, 244, 0.7),
+        rgba(244, 244, 244, 0.7)
+      );
+    }
+  }
+  &__content {
+    padding: 97px 0px 126px 0px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $tabble+px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 64px 0px 110px 0px;
+    }
+  }
+}
+
+.column-face {
+  max-width: 370px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  @media (max-width: $mobile+px) {
+    padding-right: 0px;
+  }
+  &__face {
+    margin-bottom: 31px;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 20px;
+    color: #222224;
+    line-height: 120%;
+    @media (max-width: $mobileSmall+px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.column-text {
+  padding: 53px 0px 0px 10px;
+  @media (max-width: $mobile+px) {
+    padding: 59px 0px 0px 0px;
+  }
+  display: flex;
+  flex-direction: column;
+
+  &__register {
+    display: flex;
+    justify-content: center;
+    @media (max-width: $mobile+px) {
+      height: 45px;
+    }
+  }
+  &__subscribe {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #222224;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 167%;
+    margin-bottom: 30px;
+    @media (max-width: $mobileSmall+px) {
+      font-size: 14px;
+      line-height: 153.2%;
+    }
+    & span {
+      color: #222224;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 167%;
+    }
+  }
+  &__register-text {
+    width: 100%;
+    min-height: 50px;
+    background-color: #e1e1e1;
+    color: #222224;
+    font-size: 14px;
+    line-height: 121%;
+    padding: 6px 64px 6px 22px;
+    opacity: 0.67;
+    border-radius: 24px 0px 0px 24px;
+    outline: none;
+
+    &:focus::placeholder {
+      opacity: 0;
+      transition: opacity 0.15s ease 0s;
+    }
+  }
+  &__register-button {
+    color: #ffffff;
+    background-color: #f16d7f;
+    height: 49px;
+    padding: 0px 20px;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0px 24px 24px 0px;
+    cursor: pointer;
+
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #e05c6e;
+      }
+    }
+  }
+}
+
+/*---------------------------Footer-subscription----------------------------------*/
+
+.social {
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0px;
+    @media (max-width: $mobile+px) {
+      flex-direction: column-reverse;
+      justify-content: center;
+      padding: 40px 0px 9px 0px;
+    }
+  }
+  // .social__text
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px/16px * 100%;
+    color: #fbfbfb;
+    @media (max-width: $mobile+px) {
+      padding-top: 25px;
+    }
+  }
+
+  // .social__icons
+
+  &__icons {
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__background {
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+  }
+  // .icon__item
+
+  &__item {
+    transition: all 0.3s ease 0s;
+    height: 32px;
+    width: 32px;
+    background-color: #fbfbfb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: black;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: white;
+        background-color: #f16d7f;
+      }
+    }
+  }
+}
