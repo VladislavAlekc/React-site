@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
-import { choiceActiveItem, setActiveItem } from "../redux/slices/filterSlice";
 
 const Product: React.FC = () => {
   const { id } = useParams();
@@ -17,8 +16,7 @@ const Product: React.FC = () => {
     image: string;
   }>();
 
-  const { activeItem } = useSelector(choiceActiveItem);
-
+  const [activeItem, setActiveItem] = React.useState(0);
   useEffect(() => {
     async function fetchProduct() {
       try {
@@ -37,7 +35,7 @@ const Product: React.FC = () => {
 
   const dispatch = useDispatch();
   const onClickActiveItem = (index: number) => {
-    dispatch(setActiveItem(index));
+    setActiveItem(index);
   };
 
   if (!product) {

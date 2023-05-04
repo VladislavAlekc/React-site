@@ -1,11 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart, CartItemType } from "../../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
-import {
-  setActiveItem,
-  choiceActiveItem,
-} from "../../redux/slices/filterSlice";
 
 type ProductBlockProps = {
   id: string;
@@ -24,8 +20,7 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
   image,
   sizes,
 }) => {
-  const { activeItem } = useSelector(choiceActiveItem);
-
+  const [activeItem, setActiveItem] = React.useState(0);
   const dispatch = useDispatch();
   const onClickAdd = () => {
     const items: CartItemType = {
@@ -41,7 +36,7 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
   };
 
   const onClickActiveIndex = (index: number) => {
-    dispatch(setActiveItem(index));
+    setActiveItem(index);
   };
 
   return (

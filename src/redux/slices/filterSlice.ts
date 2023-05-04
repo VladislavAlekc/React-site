@@ -11,7 +11,6 @@ interface FilterTypeState {
   activeFilter: activeTypeFilter;
   activeCategory: number;
   page: number;
-  activeItem: number;
 }
 
 const initialState: FilterTypeState = {
@@ -22,16 +21,12 @@ const initialState: FilterTypeState = {
   },
   activeCategory: 0,
   page: 1,
-  activeItem: 0,
 };
 
 const filterSlice = createSlice({
   name: "filterSlice",
   initialState,
   reducers: {
-    setActiveItem(state, action: PayloadAction<number>) {
-      state.activeItem = action.payload;
-    },
     setActiveCategory(state, action: PayloadAction<number>) {
       state.activeCategory = action.payload;
     },
@@ -54,7 +49,6 @@ const filterSlice = createSlice({
 
 export const choiceActiveItem = (state: RootState) => state.filterSlice;
 export const {
-  setActiveItem,
   setActiveCategory,
   setActiveFilter,
   setPage,
